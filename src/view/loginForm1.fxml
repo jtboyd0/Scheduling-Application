@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5px; -fx-background-color: skyblue;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginFormController">
+   <children>
+      <Button fx:id="submitBtn" layoutX="160.0" layoutY="305.0" mnemonicParsing="false" onAction="#submitCredentials" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: black;" text="Submit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="usernameTxt" layoutX="215.0" layoutY="156.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label fx:id="passwordLbl" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="202.0" prefHeight="32.0" prefWidth="169.0" text="Password" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLbl" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="149.0" prefHeight="40.0" prefWidth="169.0" text="Username" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLbl" alignment="CENTER" layoutX="19.0" layoutY="408.0" prefHeight="52.0" prefWidth="459.0" text="Error: Username or Password is incorrect" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordTxt" layoutX="216.0" layoutY="209.0" />
+      <Label fx:id="locationTagLbl" alignment="CENTER" layoutX="32.0" layoutY="61.0" prefHeight="27.0" prefWidth="130.0" text="Current Time Zone: " />
+      <Label fx:id="locationLbl" layoutX="160.0" layoutY="61.0" prefHeight="27.0" prefWidth="326.0" />
+   </children>
+</AnchorPane>

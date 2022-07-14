@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="1173.0" style="-fx-border-color: black; -fx-border-width: 5px;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainMenuFormController">
+  <tabs>
+    <Tab text="Appointments">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="694.0" prefWidth="1147.0" style="-fx-background-color: skyblue;">
+               <children>
+                  <TableView fx:id="appointmentTblView" layoutX="33.0" layoutY="27.0" prefHeight="500.0" prefWidth="1100.0">
+                     <columns>
+                        <TableColumn fx:id="appointmentIDCol" prefWidth="122.0" text="Appointment_ID" />
+                        <TableColumn fx:id="titleCol" prefWidth="122.0" text="Title" />
+                        <TableColumn fx:id="descriptionCol" prefWidth="122.0" text="Description" />
+                        <TableColumn fx:id="locationCol" prefWidth="122.0" text="Location" />
+                        <TableColumn fx:id="contactCol" prefWidth="122.0" text="Contact" />
+                        <TableColumn fx:id="typeCol" prefWidth="122.0" text="Type" />
+                        <TableColumn fx:id="startCol" prefWidth="122.0" text="Start" />
+                        <TableColumn fx:id="endCol" minWidth="0.0" prefWidth="122.0" text="End" />
+                        <TableColumn fx:id="customerIDAppCol" prefWidth="122.0" text="Customer_ID" />
+                     </columns>
+                  </TableView>
+                  <HBox layoutX="33.0" layoutY="540.0" prefHeight="98.0" prefWidth="452.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#createAppointment" prefHeight="75.0" prefWidth="100.0" style="-fx-border-color: BLACK;" text="Create Appointment" textAlignment="CENTER" wrapText="true" />
+                        <Button mnemonicParsing="false" onAction="#updateAppointment" prefHeight="75.0" prefWidth="100.0" style="-fx-border-color: BLACK;" text="Update Appointment" textAlignment="CENTER" wrapText="true" />
+                        <Button mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="75.0" prefWidth="100.0" style="-fx-border-color: BLACK;" text="Delete Appointment" textAlignment="CENTER" wrapText="true" />
+                        <VBox spacing="20.0">
+                           <children>
+                              <RadioButton fx:id="monthRadioBtn" mnemonicParsing="false" onAction="#sortByMonth" selected="true" text="Month">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sortBy" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="weekRadioBtn" mnemonicParsing="false" onAction="#sortByWeek" selected="true" text="Week" toggleGroup="$sortBy" />
+                              <RadioButton fx:id="allAppsRadioBtn" mnemonicParsing="false" onAction="#sortByAll" selected="true" text="All Appointments" toggleGroup="$sortBy" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Customers">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: skyblue;">
+               <children>
+                  <TableView fx:id="customerTblView" fixedCellSize="0.0" layoutX="32.0" layoutY="38.0" prefHeight="500.0" prefWidth="1100.0">
+                    <columns>
+                      <TableColumn fx:id="customerIDCol" prefWidth="157.0" text="Customer ID" />
+                      <TableColumn fx:id="customerNameCol" prefWidth="157.0" text="Name" />
+                        <TableColumn fx:id="customerAddressCol" prefWidth="157.0" text="Address" />
+                        <TableColumn fx:id="customerPostCol" prefWidth="157.0" text="Postal Code" />
+                        <TableColumn fx:id="customerPhoneCol" prefWidth="157.0" text="Phone" />
+                        <TableColumn fx:id="countryCol" prefWidth="157.0" text="Country" />
+                        <TableColumn fx:id="divisionCol" prefWidth="157.0" text="Division" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="330.0" layoutY="381.0" prefHeight="75.0" prefWidth="640.0" textFill="RED">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="32.0" layoutY="547.0" prefHeight="98.0" prefWidth="452.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#createCustomer" prefHeight="75.0" prefWidth="75.0" style="-fx-border-color: BLACK;" text="Create Customer" textAlignment="CENTER" wrapText="true" />
+                        <Button mnemonicParsing="false" onAction="#updateCustomer" prefHeight="75.0" prefWidth="75.0" style="-fx-border-color: BLACK;" text="Update Customer" textAlignment="CENTER" wrapText="true" />
+                        <Button mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="75.0" prefWidth="75.0" style="-fx-border-color: BLACK;" text="Delete Customer" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Reports">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: skyblue;">
+               <children>
+                  <TabPane prefHeight="670.0" prefWidth="1164.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Contact Schedule">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="contactScheduleTblView" layoutX="32.0" layoutY="141.0" prefHeight="500.0" prefWidth="1100.0">
+                                       <columns>
+                                          <TableColumn fx:id="startCol1" prefWidth="157.0" text="Start" />
+                                          <TableColumn fx:id="endCol1" minWidth="0.0" prefWidth="157.0" text="End" />
+                                          <TableColumn fx:id="appointmentIDCol1" prefWidth="157.0" text="Appointment_ID" />
+                                          <TableColumn fx:id="customerIDAppCol1" prefWidth="157.0" text="Customer_ID" />
+                                          <TableColumn fx:id="titleCol1" prefWidth="157.0" text="Title" />
+                                          <TableColumn fx:id="descriptionCol1" prefWidth="157.0" text="Description" />
+                                          <TableColumn fx:id="typeCol1" prefWidth="157.0" text="Type" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox alignment="TOP_CENTER" layoutX="329.0" layoutY="55.0" prefHeight="70.0" prefWidth="506.0" spacing="30.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" spacing="70.0">
+                                             <children>
+                                                <Label text="Contact">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="TOP_CENTER" spacing="50.0">
+                                             <children>
+                                                <ComboBox fx:id="contactComBox" onAction="#selectContact" prefHeight="51.0" prefWidth="230.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Customer Schedule">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="TOP_CENTER" layoutX="329.0" layoutY="51.0" prefHeight="70.0" prefWidth="506.0" spacing="30.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" spacing="70.0">
+                                             <children>
+                                                <Label text="Customer">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets top="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="TOP_CENTER" spacing="50.0">
+                                             <children>
+                                                <ComboBox fx:id="customerComBox" onAction="#selectCustomer" prefHeight="51.0" prefWidth="230.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="customerScheduleTblView" layoutX="32.0" layoutY="141.0" prefHeight="500.0" prefWidth="1100.0">
+                                       <columns>
+                                          <TableColumn fx:id="startCol2" prefWidth="157.0" text="Start" />
+                                          <TableColumn fx:id="endCol2" minWidth="0.0" prefWidth="157.0" text="End" />
+                                          <TableColumn fx:id="appointmentIDCol2" prefWidth="157.0" text="Appointment_ID" />
+                                          <TableColumn fx:id="contactCol2" prefWidth="157.0" text="Contact" />
+                                          <TableColumn fx:id="titleCol2" prefWidth="157.0" text="Title" />
+                                          <TableColumn fx:id="descriptionCol2" prefWidth="157.0" text="Description" />
+                                          <TableColumn fx:id="typeCol2" prefWidth="157.0" text="Type" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab text="Appointment Types">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox layoutX="329.0" prefHeight="160.0" prefWidth="506.0" spacing="30.0">
+                                       <children>
+                                          <VBox alignment="CENTER_RIGHT" spacing="70.0">
+                                             <children>
+                                                <Label text="Type of Appointment">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" spacing="50.0">
+                                             <children>
+                                                <ComboBox fx:id="appTypeComBox" onAction="#selectType" prefHeight="51.0" prefWidth="230.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <BarChart fx:id="appBarGraph" animated="false" barGap="0.0" categoryGap="0.0" layoutX="265.0" layoutY="175.0" prefHeight="452.0" prefWidth="635.0" title="# of Appointments by Type per month">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="monthsAxis" animated="false" autoRanging="false" label="Months" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="numericalAxis" animated="false" autoRanging="false" label="# of Appointments" minorTickCount="0" minorTickLength="1.0" side="LEFT" tickUnit="1.0" upperBound="10.0" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
